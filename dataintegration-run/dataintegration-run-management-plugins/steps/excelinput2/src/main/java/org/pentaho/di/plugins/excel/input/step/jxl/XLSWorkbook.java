@@ -81,7 +81,7 @@ public class XLSWorkbook implements KWorkbook {
     if ( sheet == null ) {
       return null;
     }
-    return new org.pentaho.di.trans.steps.excelinput.jxl.XLSSheet( sheet );
+    return new XLSSheet( sheet );
   }
 
   public String[] getSheetNames() {

@@ -25,7 +25,6 @@ import org.pentaho.di.trans.Trans;
 import org.pentaho.di.trans.TransAdapter;
 import org.pentaho.di.trans.TransExecutionConfiguration;
 import org.pentaho.di.trans.TransMeta;
-import org.pentaho.di.trans.TransSupplier;
 import org.pentaho.di.trans.step.StepMeta;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -172,7 +171,7 @@ public class PreviewTransGraph {
                 // memory
                 // To be able to completely test this, we need to run it as we would normally do in pan
                 //
-                trans = new TransSupplier(transMeta, log, this::createLegacyTrans).get();
+                trans = new Trans();
 
 
                 String spoonLogObjectId = UUID.randomUUID().toString();

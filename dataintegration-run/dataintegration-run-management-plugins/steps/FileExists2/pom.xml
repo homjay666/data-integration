@@ -12,7 +12,7 @@
     <artifactId>FileExists2</artifactId>
 
   <properties>
-        <kettle.version>8.3.0.26-1479</kettle.version>
+        <kettle.version>9.4.0.0-343</kettle.version>
         <sofaboot.version>3.3.0</sofaboot.version>
       <clickhouse.version>0.3.1</clickhouse.version>
       <postgresql.version>42.2.9</postgresql.version>
@@ -30,14 +30,12 @@
             <groupId>pentaho-kettle</groupId>
             <artifactId>kettle-engine</artifactId>
             <version>${kettle.version}</version>
-            <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>pentaho-kettle</groupId>
             <artifactId>kettle-core</artifactId>
             <version>${kettle.version}</version>
-            <scope>provided</scope>
         </dependency>
 
     <dependency>

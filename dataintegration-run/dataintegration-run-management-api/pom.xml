@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>dataintegration-run-management-api</artifactId>
   <properties>
-        <kettle.version>8.3.0.26-1479</kettle.version>
+        <kettle.version>9.4.0.0-343</kettle.version>
         <sofaboot.version>3.3.0</sofaboot.version>
 
     </properties>
@@ -28,7 +28,6 @@
             <groupId>pentaho-kettle</groupId>
             <artifactId>kettle-engine</artifactId>
             <version>${kettle.version}</version>
-            <scope>provided</scope>
         </dependency>
 
         <!--spring web-->

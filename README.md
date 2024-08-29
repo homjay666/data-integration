@@ -144,3 +144,19 @@ npm run dev
 请参考 [LICENSE](https://github.com/young-datafan/data-integration/blob/develop/LICENSE) 文件.
 
 --------------------------------------------------------------------------------
+
+
+## 说明
+
+```shell
+cd lib
+# windows
+mvn install:install-file "-DgroupId=pentaho-kettle" "-DartifactId=kettle-core" "-Dversion=8.3.0.0-371" "-Dfile=D:\05-learn_github\data-integration\lib\kettle-core-8.3.0.0-371.jar" "-Dpackaging=jar" "-DgeneratePom=true"
+mvn install:install-file "-DgroupId=pentaho-kettle" "-DartifactId=kettle-engine" "-Dversion=8.3.0.0-371" "-Dfile=D:\05-learn_github\data-integration\lib\kettle-engine-8.3.0.0-371.jar" "-Dpackaging=jar" "-DgeneratePom=true"
+
+# linux
+mvn install:install-file -Dfile=kettle-core-8.3.0.0-371.jar -DgroupId=pentaho-kettle -DartifactId=kettle-core -Dversion=8.3.0.0-371 -Dpackaging=jar -DgeneratePom=true
+mvn install:install-file -Dfile=kettle-engine-8.3.0.0-371.jar -DgroupId=pentaho-kettle -DartifactId=kettle-engine -Dversion=8.3.0.0-371 -Dpackaging=jar -DgeneratePom=true
+```
+
+--------------------------------------------------------------------------------

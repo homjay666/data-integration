@@ -44,7 +44,6 @@ import org.pentaho.di.core.logging.KettleLogStore;
 import org.pentaho.di.core.logging.LogChannelInterface;
 import org.pentaho.di.core.spreadsheet.KSheet;
 import org.pentaho.di.core.spreadsheet.KWorkbook;
-import org.pentaho.di.trans.steps.excelinput.staxpoi.StaxPoiSheet;
 
 /**
  * Streaming reader for XLSX files.<br>
@@ -64,12 +63,12 @@ public class StaxPoiWorkbook implements KWorkbook {
   private String[] sheetNames;
 
   // mapping of the sheet object with its ID/Name
-  private Map<String, org.pentaho.di.trans.steps.excelinput.staxpoi.StaxPoiSheet> openSheetsMap;
+  private Map<String, StaxPoiSheet> openSheetsMap;
 
   private OPCPackage opcpkg;
 
   protected StaxPoiWorkbook() {
-    openSheetsMap = new HashMap<String, org.pentaho.di.trans.steps.excelinput.staxpoi.StaxPoiSheet>();
+    openSheetsMap = new HashMap<String, StaxPoiSheet>();
     this.log = KettleLogStore.getLogChannelInterfaceFactory().create( this );
   }
 
@@ -144,10 +143,10 @@ public class StaxPoiWorkbook implements KWorkbook {
     if ( sheetID == null ) {
       return null;
     }
-    org.pentaho.di.trans.steps.excelinput.staxpoi.StaxPoiSheet sheet = openSheetsMap.get( sheetID );
+    StaxPoiSheet sheet = openSheetsMap.get( sheetID );
     if ( sheet == null ) {
       try {
-        sheet = new org.pentaho.di.trans.steps.excelinput.staxpoi.StaxPoiSheet( reader, sheetName, sheetID );
+        sheet = new StaxPoiSheet( reader, sheetName, sheetID );
         openSheetsMap.put( sheetID, sheet );
       } catch ( Exception e ) {
         log.logError( sheetName, e );

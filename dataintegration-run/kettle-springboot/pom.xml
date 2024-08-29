@@ -9,7 +9,7 @@
 
     <artifactId>kettle-springboot</artifactId>
     <properties>
-        <kettle.version>8.3.0.26-1479</kettle.version>
+        <kettle.version>9.4.0.0-343</kettle.version>
         <mybatis.version>3.5.1</mybatis.version>
         <mybatis-spring.version>2.0.1</mybatis-spring.version>
     </properties>

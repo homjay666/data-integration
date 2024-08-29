@@ -35,26 +35,30 @@ public class XLSSheet implements KSheet {
     this.sheet = sheet;
   }
 
+  @Override
   public String getName() {
     return sheet.getName();
   }
 
-  public KCell[] getRow( int rownr ) {
+  @Override
+  public KCell[] getRow(int rownr ) {
     Cell[] cells = sheet.getRow( rownr );
-    org.pentaho.di.trans.steps.excelinput.jxl.XLSCell[] xlsCells = new org.pentaho.di.trans.steps.excelinput.jxl.XLSCell[cells.length];
+    XLSCell[] xlsCells = new XLSCell[cells.length];
     for ( int i = 0; i < cells.length; i++ ) {
       if ( cells[i] != null ) {
-        xlsCells[i] = new org.pentaho.di.trans.steps.excelinput.jxl.XLSCell( cells[i] );
+        xlsCells[i] = new XLSCell( cells[i] );
       }
     }
     return xlsCells;
   }
 
+  @Override
   public int getRows() {
     return sheet.getRows();
   }
 
-  public KCell getCell( int colnr, int rownr ) {
+  @Override
+  public KCell getCell(int colnr, int rownr ) {
     Cell cell = sheet.getCell( colnr, rownr );
     if ( cell == null ) {
       return null;
